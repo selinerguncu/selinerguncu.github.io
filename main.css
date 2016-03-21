@@ -10,6 +10,7 @@ html {
 }
 body {
   overflow: auto;
+  font-family: 'Lora', Georgia, 'Times New Roman';
 }
 
 body img{
