@@ -19,12 +19,24 @@ body img{
   position: fixed;
   width: 50%;
   height: auto;
+  max-height: 900px;
+  max-width: 900px;
 }
+
 h1 {
   font-size: 36px;
 }
+
 h2 {
   font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 32px 0;
+  color: #aaa;
+  border-bottom: 1px dotted #aaa;
+  line-height: 2em;
 }
 a,
 a:visited,
@@ -49,6 +61,8 @@ main {
   align-content: flex-start;
   align-items: flex-start;
 }
+
+main .navigation,
 main section,
 main footer {
   width: 100%;
@@ -56,17 +70,101 @@ main footer {
 }
 main section {
   flex-grow: 1;
-  padding: 200px 0 0;
+  padding: 100px 0 0;
 }
+
+main .navigation,
 main footer {
   flex-grow: 0;
   padding: 30px 0;
 }
-main p {
+main footer {
+  position: relative;
+  font-size: 12px;
+  color: #888;
+  max-width: 500px;
+  padding-left: 20px;
+}
+
+main footer figure {
+  display: block;
+  margin: 0;
+  background: transparent url('./img/heart.svg') no-repeat top left;
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+  vertical-align: top;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+
+main p, ul {
   color: #151515;
   line-height: 1.7em;
   max-width: 500px;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul ul {
+  padding: 16px 0 16px 16px;
+}
+
+
+ul li {
+  margin-bottom: 16px;
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+}
+
+ul li strong {
+  /*font-family: Georgia, 'Times New Roman';*/
+  font-weight: 600;
+  color: #151515;
+  font-style: normal;
+  font-size: 16px;
+}
+
+/*main .navigation {
+  background: #e5e5e5;
+  width: 100%;
+  margin-left: -50px;
+  padding: 30px 50px;
+  box-sizing: content-box;
+  border-bottom: 1px solid #ddd;
+}
+*/
+.navigation a {
+  text-decoration: none;
+  margin-right: 16px;
+  color: #aaa;
+}
+
+.navigation .active {
+  text-decoration: underline;
+  color: #151515;
+}
+
+.research ul li {
+  font-style: normal; 
+}
+
+.research ul li cite {
+  font-style: italic; 
+}
+
+
+
+
+/* RESPONSIVE STYLES */
+
+
 @media (max-width: 800px) {
   body img{
     top: 0;
@@ -95,11 +193,19 @@ main p {
     align-items: none;
   }
   main section {
-    padding-top: 25px;
+    padding-top: 0;
   }
 
   main section,
   main footer {
     flex-grow: none;
+  }
+  main .navigation {
+    background: #e5e5e5;
+    width: 100%;
+    margin-left: -25px;
+    padding: 30px 25px;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
   }
 }
